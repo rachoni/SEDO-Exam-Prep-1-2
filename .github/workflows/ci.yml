@@ -14,10 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup .NET SDK
+      - name: Setup .NET SDKs
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0' # Adjust version if the project uses a different .NET SDK version
+          dotnet-version: |
+            6.0.x
+            8.0.x
 
       - name: Restore dependencies
         run: dotnet restore
